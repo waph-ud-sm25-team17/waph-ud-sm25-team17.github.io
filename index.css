@@ -291,9 +291,9 @@ body {
     max-width: 500px;
   }
   .custom-btn {
-    background: #FFE3BB !important;
+    background: #03A6A1 !important;
     border: #03A6A1 ;
-    color: #03A6A1 !important;
+    color: #FFE3BB !important;
     -webkit-transition: all 0.5s ease-in; 
     -moz-transition: all 0.5s ease-in; 
     -ms-transition: all 0.5s ease-in;
@@ -301,9 +301,9 @@ body {
     transition: all 0.5s ease-in;
   }
   .custom-btn:hover {
-    background: #03A6A1 !important;
+    background: #FFE3BB !important;
     border: #FFE3BB ;
-    color: #FFE3BB !important;
+    color: #03A6A1 !important;
     -webkit-transition: all 0.5s ease-in; 
     -moz-transition: all 0.5s ease-in; 
     -ms-transition: all 0.5s ease-in;
