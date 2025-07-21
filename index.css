@@ -281,3 +281,32 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  .headshot-img {
+    height: 50vh;
+    border-radius: 100%;
+    width: 50vh;
+    padding: 10px;
+    align-self: center;
+    max-height: 500px;
+    max-width: 500px;
+  }
+  .custom-btn {
+    background: #FFE3BB !important;
+    border: #03A6A1 ;
+    color: #03A6A1 !important;
+    -webkit-transition: all 0.5s ease-in; 
+    -moz-transition: all 0.5s ease-in; 
+    -ms-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
+  }
+  .custom-btn:hover {
+    background: #03A6A1 !important;
+    border: #FFE3BB ;
+    color: #FFE3BB !important;
+    -webkit-transition: all 0.5s ease-in; 
+    -moz-transition: all 0.5s ease-in; 
+    -ms-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+    transition: all 0.5s ease-in;
+  }
