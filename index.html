@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WAPH: Caleb Hoskins</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="./index.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-default navbar-expand-lg sticky-top">
+            <div class="container">
+                <a id="navIconParent" class="navbar-brand" href="#myPage">
+                <div id="navClock" container="body" [dynamicPosition]="false" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title=displayTime()>
+                    <canvas id="navIcon" width="100" height="100"></canvas>
+                    <!-- displays the analog clock from Profressors codebase -->
+                    <script src="https://waph-phung.github.io/clock.js"></script>
+                    <script type="text/javascript">
+                        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+                        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                        return new bootstrap.Tooltip(tooltipTriggerEl)
+                        })
+
+                        var canvas = document.getElementById("navIcon");
+                        var ctx = canvas.getContext("2d");
+                        var radius = canvas.height / 2;
+                        ctx.translate(radius, radius);
+                        radius = radius * 0.90;
+                        setInterval(drawClock, 1000);
+
+                        function drawClock() {
+                            drawFace(ctx, radius);
+                            drawNumbers(ctx, radius);
+                            drawTime(ctx, radius);
+                        }
+                        // This gets the tooltip reference over the analog clock and updates it with the digital date/time
+                        function displayTime() {
+                            var exampleTriggerEl = document.getElementById('navClock');
+                            var tooltip = bootstrap.Tooltip.getInstance(exampleTriggerEl);
+                            tooltip.setContent({ '.tooltip-inner': '' + new Date() + '' });
+                            // tooltip.update();
+                        }
+                        setInterval(displayTime,500);
+                    </script>
+                </div>
+                WAPH Team 17
+                </a>
+                <button type="button" id="toggleBtn" class="btn navbar-toggler" data-bs-toggle="collapse" data-bs-target="#myNavbar" aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle Nav">
+                <svg id="navBtnIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                </svg>                       
+                </button>
+                <!-- </div> -->
+                <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item"><a href="#about" class="nav-link">ABOUT</a></li>
+                    <li class="nav-item"><a href="#members" class="nav-link">MEMBERS</a></li>
+                    <!-- <li class="nav-item"><a href="#hackathons" class="nav-link">HACKATHONS</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link">PROJECTS</a></li>
+                    <li class="nav-item"><a href="#teamProjects" class="nav-link">TEAM PROJECTS</a></li> -->
+                </ul>
+                </div>
+            </div>
+            </nav>
+            <script type="text/javascript">
+            // this will auto close the navbar if the user clicks outside of it in mobile view, or if one of the links are clicked
+            $(document).on('click',function(e){
+                if($('#myNavbar').hasClass('show')){
+                $('.collapse').collapse('hide'); 
+                }
+            })
+            </script>
+        <!-- Container (About Section) -->
+        <div id="about" class="container-fluid">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h2 class="custom-title">About</h2><br>
+                    <h4>This class is Web Application Programming and Hacking taught by Dr. Phu Phung at the University of Dayton.
+                        It teaches the process of building web applications with an emphasis on "thinking like a hacker" in order to
+                        create secure applications during the development cycle. Often times security vulnerabilities are patched after
+                        the fact which can lead to data leaks, loss of money and a loss of trust in your consumers. In order to prevent taught 
+                        the developers should put security at the forefront instead of an afterthought.
+                    </h4><br>
+                    <!-- <h4><a href="./index.html">Go Back To Main Site</a></h4> -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Container (Members Section) -->
+        <div id="members" class="container-fluid bg-grey">
+            <div class="row">
+                <div class="col-sm-8 full-width">
+                <h2 class="custom-title">Members</h2>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <img src="..." class="card-img-top" alt="Ian's Picture" id="ianImg" style="width: 100%;height: 100%;">
+                                <div class="card-body">
+                                <h5 class="card-title">Ian Cannon</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Team Leader</h6>
+                                <p class="card-text">Ian's Bio
+                                </p>
+                                <p class="card-text"><small class="text-muted"><a href="https://spiph.github.io/">Ian's Personal Website</a></small></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <img src="./imgs/calebs_picture.png" class="card-img-top" alt="Caleb's Picture" id="calebImg" style="width: 100%;height: 100%;">
+                                <div class="card-body">
+                                <h5 class="card-title">Caleb Hoskins</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Team Member</h6>
+                                <p class="card-text">Hi, my name is Caleb Hoskins! I am an Associate Software Engineer for the University of Dayton's 
+                                    Research Institute <a href="https://udayton.edu/udri/capabilities/software/autonomy-systems.php">Autonomy Systems Team</a>. 
+                                    I graduated from the University of Dayton in the Spring of 2021 with a Bachelors degree in Computer Science and then started working at the Research Institute after that.
+                                    I'm currently working on my Masters degree in Computer Science, from the University of Dayton, and will complete it in the Summer of 2025
+                                    . I enjoy full stack development and exploring new technologies.</p>
+                                <p class="card-text"><small class="text-muted"><a href="https://hoskinsc1.github.io/index.html">Caleb's Personal Website</a></small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+
+        <!-- Container (Hackathons Section) -->
+        <!-- <div id="hackathons" class="container-fluid">
+            <div class="row">
+                <div class="col-sm-8 full-width">
+                    <h2 class="custom-title">Hackathons</h2><br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Hackathon 1 - Cross-site Scripting Attacks and Defenses</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">Hands On Hacking</h6>
+                                    <p class="card-text">This is the first hackathon assignment and involved becoming familiar with various vulnerabilities 
+                                        in web applications in regards to cross-site scripting (XSS) attacks. Task 1 was performing XSS attacks on the professors 
+                                        website that progressivley had more security each level to showcase the different approaches and their short comings. 
+                                        Task 2 was modifying our previous Lab 1 echo.php commit and Lab 2 html page commit to be more secure by encoding and validating 
+                                        user input to prevent XSS attacks.</p>
+                                    <p class="card-text"><small class="text-muted">Week 4 - Week 5</small></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Hackathon 2 - TBD</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">Hands On Hacking</h6>
+                                    <p class="card-text">TBD</p>
+                                    <p class="card-text"><small class="text-muted">TBD</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- Container (Projects Section) -->
+        <!-- <div id="projects" class="container-fluid bg-grey">
+            <div class="row">
+                <div class="col-sm-8 full-width">
+                    <h2 class="custom-title">Projects</h2><br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Project 1 - Professional Homepage on Github.io</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">Individual Project</h6>
+                                    <p class="card-text">In this individual project we were tasked with developing a 
+                                        personal website that would then be deployed on github.io. 
+                                        The goal of this project is to become more familiar with the 
+                                        front end development cycle, frameworks used, how to integrate public APIs, 
+                                        and to then have a personal website that we can use to showcase to future 
+                                        potential employers.</p>
+                                    <p class="card-text"><a href="https://hoskinsc1.github.io/">Link To Website</a></p>
+                                    <p class="card-text"><small class="text-muted">Week 3 - Week 6</small></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Project 2 - TBD</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">Individual Project</h6>
+                                    <p class="card-text">TBD</p>
+                                    <p class="card-text"><small class="text-muted">TBD</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- Container (Team Projects Section) -->
+        <!-- <div id="teamProjects" class="container-fluid">
+            <div class="row">
+                <div class="col-sm-8 full-width">
+                    <h2 class="custom-title">Team Projects</h2><br>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Project 1 - TBD</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">Team Project</h6>
+                                    <p class="card-text">TBD</p>
+                                    <p class="card-text"><small class="text-muted">TBD</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </body>
+</html>
